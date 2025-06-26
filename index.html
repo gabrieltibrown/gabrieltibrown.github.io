@@ -1,24 +1,237 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Gabriel Brown</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-	</head>
-	<body>
-		<div id="menu">
-			<div class="img__wrap">
-				<img src="about.jpg">
-				<a href="about.html"><p>About</p></a>
-			</div>
-			<div class="img__wrap">
-				<img src="blog.jpg">
-				<a href="blog.html"><p>Technical Blog</p></a>
-			</div>
-			<div class="img__wrap">
-				<img src="music.jpg">
-				<a href="music.html"><p>Music</p></a>
-			</div>
-
-		</div>
-	</body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Brown</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background: #fefefe;
+            color: #333;
+            line-height: 1.6;
+            font-size: 14px;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .header {
+            border-bottom: 1px dashed #ccc;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .name {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 13px;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #444;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .link {
+            color: #0066cc;
+            text-decoration: none;
+            font-size: 13px;
+            padding: 4px 8px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+        
+        .link:hover {
+            background: #f0f8ff;
+            border-color: #0066cc;
+            text-decoration: none;
+        }
+        
+        .about {
+            background: #fafafa;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 3px solid #0066cc;
+            margin-bottom: 20px;
+        }
+        
+        .projects {
+            list-style: none;
+        }
+        
+        .project {
+            padding: 10px 0;
+            border-bottom: 1px dotted #ddd;
+        }
+        
+        .project:last-child {
+            border-bottom: none;
+        }
+        
+        .project-name {
+            font-weight: 500;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        
+        .project-name:hover {
+            text-decoration: underline;
+        }
+        
+        .project-desc {
+            color: #666;
+            font-size: 12px;
+            margin-top: 3px;
+        }
+        
+        .cute-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed #ccc;
+            font-size: 12px;
+            color: #888;
+        }
+        
+        .cursor {
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        .status {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #4ade80;
+            border-radius: 50%;
+            margin-right: 6px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .ascii-art {
+            font-size: 10px;
+            color: #999;
+            text-align: center;
+            margin: 20px 0;
+            white-space: pre;
+            display: flex;
+            justify-content: center;
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            .links {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="name">Gabriel Brown<span class="cursor">_</span></div>
+            <div class="subtitle">software engineer / data scientist / berlin</div>
+        </div>
+        
+        <div class="section">
+            <div class="links">
+                <a href="mailto:gabrieltibrown@gmail.com" class="link">email</a>
+                <a href="https://github.com/gabrieltibrown" class="link">github</a>
+                <a href="https://soundcloud.com/g_ank" class="link">soundcloud</a>
+                <a href="./resume.pdf" class="link">resume</a>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">about</div>
+            <div class="about">
+                Hey! I'm a software engineer working on data science and machine learning. 
+                I'm currently doing my Master's at Freie Universität Berlin after working at startups
+                like Sauce Labs and Back Technologies. I'm language agnostic, but am especially comfortable building in Python.
+                When not coding, I love biking, swimming in lakes around Berlin, and listening to music ☆
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">projects</div>
+            <ul class="projects">
+                <li class="project">
+                    <a href="https://github.com/gabrieltibrown/Tenant-Rights-RAG-App" class="project-name">tenant-rights-rag</a>
+                    <div class="project-desc">legal assistant using langchain + openai for german tenancy law</div>
+                </li>
+                <li class="project">
+                    <a href="https://github.com/gabrieltibrown/poker-bot" class="project-name">poker-bot</a>
+                    <div class="project-desc">reinforcement learning poker ai with markov decision processes</div>
+                </li>
+                <li class="project">
+                    <a href="https://github.com/gabrieltibrown/Fourier-Resampling-Synth" class="project-name">additive-synth-vst</a>
+                    <div class="project-desc">c++ virtual synthesizer using juce and fourier analysis</div>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="ascii-art">
+            <img src="flower.jpg" alt="flower" style="max-width: 100px; height: auto;">
+        </div>
+        
+        <div class="cute-details">
+            <!-- footer removed -->
+        </div>
+    </div>
+</body>
 </html>
